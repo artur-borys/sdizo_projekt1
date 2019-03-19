@@ -25,8 +25,10 @@ public:
 	void fixUp(size_t pos);
 	void swap(int *key1, int *key2);
 	void print();
+	void print(ostream & output, int index);
 	void clear();
 	void readFromFile(string path);
+	void BuildFloyd();
 	~Heap();
 };
 

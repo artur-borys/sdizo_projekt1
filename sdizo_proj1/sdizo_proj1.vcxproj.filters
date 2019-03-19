@@ -77,5 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="losowe_20000.txt" />
+    <Text Include="liczby.txt" />
   </ItemGroup>
 </Project>

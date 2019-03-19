@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Heap.h"
+#include <cmath>
 
 
 Heap::Heap()
@@ -130,10 +131,41 @@ void Heap::print()
 	if (size == 0) {
 		return;
 	}
-	for (size_t i = 0; i < size; i++) {
-		cout << keys[i] << " ";
+	/*for (int i = 0; i < size; i++) {
+		cout << keys[i] << endl;
+	}*/
+	bool not_finished = true;
+	int i, level, current_count = 1, width = 1, indent;
+	/*while (true) {
+		if (current_count <= size) {
+			width *= 2;
+			current_count += width;
+		}
+		else {
+			break;
+		}
 	}
-	cout << endl;
+	cout << width << endl;*/
+	width = 80;
+
+	for (i = 0, level = 0; not_finished; i += pow(2, level), level++) {
+		indent = width / (2 * (level + 1));
+		for (int a = 0; a < indent; a++) {
+			cout << " ";
+		}
+		int level_width = pow(2, level);
+		for (int j = 0; j < level_width; j++) {
+			if (i + j >= size) {
+				not_finished = false;
+				break;
+			}
+			cout << keys[i + j];
+			for (int j = 0; j < width / level_width; j++) {
+				cout << " ";
+			}
+		}
+		cout << endl;
+	}
 }
 
 void Heap::clear()
@@ -143,6 +175,30 @@ void Heap::clear()
 
 void Heap::readFromFile(string path)
 {
+	ifstream f;
+	f.open(path);
+	if (f.is_open()) {
+		clear();
+		int num;
+		f >> size;
+		keys = new int[size];
+		int i = 0;
+		while (f >> num) {
+			keys[i] = num;
+			i++;
+		}
+		BuildFloyd();
+	}
+	else {
+		cout << "Blad podczas odczytu z pliku!" << endl;
+	}
+}
+
+void Heap::BuildFloyd()
+{
+	for (int i = (size - 2) / 2; i >= 0; --i) {
+		fixDown(i);
+	}
 }
 
 

@@ -179,6 +179,7 @@
     <ClCompile Include="Tab.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="liczby.txt" />
     <Text Include="losowe_20000.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
