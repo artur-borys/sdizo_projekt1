@@ -160,6 +160,8 @@
     <ClInclude Include="MenuTab.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Tab.h" />
+    <ClInclude Include="Tree.h" />
+    <ClInclude Include="TreeItem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Czas.cpp" />
@@ -177,6 +179,8 @@
     </ClCompile>
     <ClCompile Include="sdizo_proj1.cpp" />
     <ClCompile Include="Tab.cpp" />
+    <ClCompile Include="Tree.cpp" />
+    <ClCompile Include="TreeItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="liczby.txt" />
