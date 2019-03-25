@@ -108,6 +108,7 @@ void List::clear() {
 				ptr = ptr->getNext();
 			}
 			else {
+				head = nullptr;
 				delete ptr;
 			}
 		}

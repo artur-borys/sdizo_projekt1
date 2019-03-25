@@ -40,6 +40,12 @@ TreeItem* TreeItem::getGrandparent()
 	return parent->parent;
 }
 
+void TreeItem::print() {
+	cout << "Parent: " << parent << endl;
+	cout << "Value: " << value << endl;
+	cout << "Left: " << left << " Right: " << right << endl;
+}
+
 
 TreeItem::~TreeItem()
 {

@@ -8,10 +8,10 @@ using namespace std;
 class Tab
 {
 private:
-	int *tab;
 	size_t size;
 public:
 	Tab();
+	int *tab;
 	Tab(size_t size);
 	void insert(size_t pos, int value);
 	void insertAtEnd(int value);

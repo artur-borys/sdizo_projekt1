@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 #include "Tab.h"
 
 using namespace std;
@@ -9,9 +10,10 @@ using namespace std;
 class Heap
 {
 private:
+	
+public:
 	int *keys;
 	size_t size = 0;
-public:
 	Heap();
 	void insert(int key);
 	void remove(int key);
@@ -25,7 +27,6 @@ public:
 	void fixUp(size_t pos);
 	void swap(int *key1, int *key2);
 	void print();
-	void print(ostream & output, int index);
 	void clear();
 	void readFromFile(string path);
 	void BuildFloyd();

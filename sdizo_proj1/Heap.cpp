@@ -39,6 +39,7 @@ void Heap::remove(int key)
 		for (int j = 0; j < i; j++) {
 			insert(popped_keys->get(j));
 		}
+		delete popped_keys;
 	}
 	else if (index == 0) {
 		pop();
@@ -52,6 +53,8 @@ void Heap::pop() {
 	for (size_t i = 0; i < size - 1; i++) {
 		newKeys[i] = keys[i];
 	}
+	delete[] keys;
+	keys = newKeys;
 	size--;
 	fixDown(0);
 }
@@ -171,6 +174,8 @@ void Heap::print()
 void Heap::clear()
 {
 	delete[] keys;
+	size = 0;
+	keys = nullptr;
 }
 
 void Heap::readFromFile(string path)

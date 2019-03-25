@@ -15,6 +15,7 @@ public:
 	TreeItem* getSibling();
 	TreeItem* getUncle();
 	TreeItem* getGrandparent();
+	void print();
 	~TreeItem();
 };
 
