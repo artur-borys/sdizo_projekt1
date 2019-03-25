@@ -84,6 +84,7 @@ void testTab() {
 
 			avg_iBeg[cSize] += c.result();
 		}
+		avg_iBeg[cSize] /= 100;
 		index = rand() % sizes[cSize];
 		for (int i = 0; i < 100; i++) {
 			int val = rand();
@@ -95,6 +96,7 @@ void testTab() {
 
 			avg_i[cSize] += c.result();
 		}
+		avg_i[cSize] /= 100;
 		for (int i = 0; i < 100; i++) {
 			int val = rand();
 			c.start();
@@ -104,6 +106,7 @@ void testTab() {
 
 			avg_iEnd[cSize] += c.result();
 		}
+		avg_iEnd[cSize] /= 100;
 		for (int i = 0; i < 100; i++) {
 			c.start();
 			tab->removeFromBeginning();
@@ -112,6 +115,7 @@ void testTab() {
 
 			avg_rBeg[cSize] += c.result();
 		}
+		avg_rBeg[cSize] /= 100;
 		index = rand() % sizes[cSize];
 		for (int i = 0; i < 100; i++) {
 			
@@ -122,6 +126,7 @@ void testTab() {
 
 			avg_r[cSize] += c.result();
 		}
+		avg_r[cSize] /= 100;
 		for (int i = 0; i < 100; i++) {
 			c.start();
 			tab->removeFromEnd();
@@ -130,6 +135,7 @@ void testTab() {
 
 			avg_rEnd[cSize] += c.result();
 		}
+		avg_rEnd[cSize] /= 100;
 		int val_to_find = nums.at(rand() % sizes[cSize]);
 		for (int i = 0; i < 100; i++) {
 			c.start();
@@ -138,6 +144,7 @@ void testTab() {
 
 			avg_find[cSize] += c.result();
 		}
+		avg_find[cSize] /= 100;
 		delete tab;
 		nums.clear();
 	}
@@ -231,6 +238,7 @@ void testList() {
 
 			avg_iBeg[cSize] += c.result();
 		}
+		avg_iBeg[cSize] /= 100;
 		randKey = nums.at(rand() % sizes[cSize]);
 		for (int i = 0; i < 100; i++) {
 			int val = rand();
@@ -242,6 +250,7 @@ void testList() {
 
 			avg_i[cSize] += c.result();
 		}
+		avg_i[cSize] /= 100;
 		for (int i = 0; i < 100; i++) {
 			int val = rand();
 			c.start();
@@ -251,7 +260,7 @@ void testList() {
 
 			avg_iEnd[cSize] += c.result();
 		}
-		
+		avg_iEnd[cSize] /= 100;
 		for (int i = 0; i < 100; i++) {
 			c.start();
 			list->removeFromBeginning();
@@ -260,7 +269,7 @@ void testList() {
 
 			avg_rBeg[cSize] += c.result();
 		}
-		
+		avg_rBeg[cSize] /= 100;
 		randKey = nums.at(rand() % sizes[cSize]);
 		for (int i = 0; i < 100; i++) {
 
@@ -271,7 +280,7 @@ void testList() {
 
 			avg_r[cSize] += c.result();
 		}
-		
+		avg_r[cSize] /= 100;
 		for (int i = 0; i < 100; i++) {
 			c.start();
 			list->removeFromEnd();
@@ -280,7 +289,7 @@ void testList() {
 
 			avg_rEnd[cSize] += c.result();
 		}
-		
+		avg_rEnd[cSize] /= 100;
 		randKey = nums.at(rand() % sizes[cSize]);
 		for (int i = 0; i < 100; i++) {
 			c.start();
@@ -289,6 +298,7 @@ void testList() {
 
 			avg_find[cSize] += c.result();
 		}
+		avg_find[cSize] /= 100;
 		delete list;
 		nums.clear();
 	}
@@ -380,6 +390,7 @@ void testHeap() {
 
 			avg_i[cSize] += c.result();
 		}
+		avg_i[cSize] /= 100;
 		
 		for (int i = 0; i < 100; i++) {
 			c.start();
@@ -389,6 +400,7 @@ void testHeap() {
 
 			avg_pop[cSize] += c.result();
 		}
+		avg_pop[cSize] /= 100;
 		key = heap->keys[rand() % sizes[cSize]];
 		for (int i = 0; i < 100; i++) {
 
@@ -399,6 +411,7 @@ void testHeap() {
 
 			avg_r[cSize] += c.result();
 		}
+		avg_r[cSize] /= 100;
 
 		key = heap->keys[rand() % sizes[cSize]];
 		for (int i = 0; i < 100; i++) {
@@ -408,6 +421,7 @@ void testHeap() {
 
 			avg_find[cSize] += c.result();
 		}
+		avg_find[cSize] /= 100;
 		delete heap;
 	}
 	ofstream f;
@@ -473,6 +487,7 @@ void testTree() {
 
 			avg_i[cSize] += c.result();
 		}
+		avg_i[cSize] /= 100;
 
 		key = nums->get(rand() % sizes[cSize]);
 		for (int i = 0; i < 100; i++) {
@@ -484,6 +499,7 @@ void testTree() {
 
 			avg_r[cSize] += c.result();
 		}
+		avg_r[cSize] /= 100;
 
 		key = nums->get(rand() % sizes[cSize]);
 		for (int i = 0; i < 100; i++) {
@@ -493,6 +509,7 @@ void testTree() {
 
 			avg_find[cSize] += c.result();
 		}
+		avg_find[cSize] /= 100;
 	}
 	ofstream f;
 
